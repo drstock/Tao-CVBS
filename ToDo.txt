@@ -1,0 +1,22 @@
+Speedometer App TODO:
+
+- Better filter on raw accel
+- Dynamic LPF on Gravity-vector; make filter-response time dependent on magnitude of raw accel-vec: if near 9.8: fast response, else slower response.
+- Dynamic reduction-ratio on velocity-vec; inverse to gravity filter response
+
+- implement TransmitService:
+	- timestamp velocity values
+	- packetize timestamped values in blocks of 60 sec, (ring buffer?)
+	- transmit packet every 30 sec.
+	? UDP or TCP???
+
+- implement settings as a separate activity:
+ 	* accel-resampling rate
+ 	* gravity filter parameters
+ 	* velocity reduction parametaers?
+ 	* block-buffer size (in sec)
+ 	* tx interval (in sec)
+ 	* target IP-address & port
+ 	
+ ? make GUI nicer? 
+ 	? visualize 3D vectors?
